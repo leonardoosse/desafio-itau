@@ -17,7 +17,7 @@ Para acessar a aplicação, será necessário publicá-la em um ambiente de test
 Após subir a Aplicaçao, ela estará acessível pelo endereço http://localhost:5000/
 
 
-## Build e Deploy da API para Validação (local)
+## Build e Deploy da Aplicação para Validação (local)
 
 1. Caso ainda não feito, criar o diretório de pastas e baixar o projeto desafio-itau do Github.
 
@@ -30,20 +30,26 @@ git clone https://github.com/leonardoosse/desafio-itau.git
 2. Acessar o diretório da API .
 
 ```
-cd desafio-itau/front-desafio
+cd ~/desafio-temp/desafio-itau/front-desafio
 ```
 
 1. Gerar a imagem 
 
-`docker build -t leonardoosse/front-desafio:1.0.0 -f Dockerfile . `  
+```
+docker build -t leonardoosse/front-desafio:1.0.0 -f Dockerfile . 
+```
 
 2. Se desejar, subir a imagem em um repositório (DockerHub, ECR, ACR)
 
-`docker push leonardoosse/front-desafio:1.0.0`
+```
+docker push leonardoosse/front-desafio:1.0.0
+```
 
 3. Criar o contêiner a partir da imagem gerada. 
 
-`docker run -p 5000:80 --name front-desafio -d leonardoosse/front-desafio:1.0.0`
+```
+docker run -p 5000:80 --name front-desafio -d leonardoosse/front-desafio:1.0.0
+```
 
 4. Acessar o endereço http://localhost:5000/ para validar a aplicação.
 
@@ -51,12 +57,18 @@ cd desafio-itau/front-desafio
 
 1. Parar o contêiner  
 
-`docker stop front-desafio`  
+```
+docker stop front-desafio
+```
 
 2. Remover o contêiner  
 
-`docker rm front-desafio`  
+```
+docker rm front-desafio
+```
 
 3. Remover a imagem
 
-`docker rmi leonardoosse/front-desafio:1.0.0 -f `  
+```
+docker rmi leonardoosse/front-desafio:1.0.0 -f 
+```

@@ -40,17 +40,17 @@ git clone https://github.com/leonardoosse/desafio-itau.git
 
 ```
 
-2. Subir a Aplicação, APIs e Banco de Dados.
+2. Subir o Banco de Dados, as APIs e a Aplicação.
 
-* [Front Desafio](https://github.com/leonardoosse/desafio-itau/tree/master/front-desafio#build-e-deploy-da-api-para-valida%C3%A7%C3%A3o-local).
+* [Banco de Dados](https://github.com/leonardoosse/desafio-itau/tree/master/bd-desafio#build-e-deploy-do-banco-de-dados-para-valida%C3%A7%C3%A3o-local).
 * [API de Cotação](https://github.com/leonardoosse/desafio-itau/tree/master/api-cotacao#build-e-deploy-da-api-para-valida%C3%A7%C3%A3o-local).
 * [API de Segmento](https://github.com/leonardoosse/desafio-itau/tree/master/api-segmento#build-e-deploy-da-api-para-valida%C3%A7%C3%A3o-local).
-* [Banco de Dados](https://github.com/leonardoosse/desafio-itau/tree/master/bd-desafio#build-e-deploy-da-api-para-valida%C3%A7%C3%A3o-local).
+* [Front Desafio](https://github.com/leonardoosse/desafio-itau/tree/master/front-desafio#build-e-deploy-da-aplicação-para-validação-local).
 
 3. Após encerrar a validação, excluir o diretório baixado e limpar todas as imagens e contêineres não Utilizadas ou Pendentes.
 
 ``` 
-sudo rm -r /desafio-temp
+sudo rm -r ~/desafio-temp
 docker container prune -f
 docker image prune -f
 ```

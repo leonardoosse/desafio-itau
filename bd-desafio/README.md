@@ -17,12 +17,14 @@ git clone https://github.com/leonardoosse/desafio-itau.git
 2. Acessar o diretório da Banco de Dados.
 
 ```
-cd desafio-itau/bd-desafio
+cd ~/desafio-temp/desafio-itau/bd-desafio
 ```
 
 3. Definir a Senha do Usuario SA
 
-`DB_PASSWORD=LLX5Z@Uqhan8`
+```
+DB_PASSWORD=LLX5Z@Uqhan8
+```
 
 4. Criar o contêiner a partir da imagem do SQLServer. 
 
@@ -62,7 +64,9 @@ docker exec -it bd-desafio /opt/mssql-tools/bin/sqlcmd \
 
 9. Definir Senha do Usuário da Aplicação
 
-`USER_PASSWORD=FRzs@58OiTF`
+```
+USER_PASSWORD=FRzs@58OiTF
+```
 
 10. Criar o Usuário. 
 
@@ -83,7 +87,7 @@ docker exec -it bd-desafio /opt/mssql-tools/bin/sqlcmd \
 12. Validar. Consultar tabela segmento com usuário da aplicação
 
 ```  
-docker exec -it desafio-bd /opt/mssql-tools/bin/sqlcmd \
+docker exec -it bd-desafio /opt/mssql-tools/bin/sqlcmd \
    -S localhost -U user_desafio -P $USER_PASSWORD \
    -Q "use desafio_itau; SELECT * FROM segmentos"
 ```  
@@ -94,10 +98,14 @@ Após realizar os testes no Banco de Dados, executar os passos abaixo:
 
 1. Parar o contêiner  
 
-`docker stop desafio-bd`  
+```
+docker stop bd-desafio
+```
 
 2. Remover o contêiner  
 
-`docker rm desafio-bd`  
+```
+docker rm bd-desafio
+```
 
 Referência: https://docs.microsoft.com/pt-br/sql/linux/quickstart-install-connect-docker?view=sql-server-ver15&pivots=cs1-bash
