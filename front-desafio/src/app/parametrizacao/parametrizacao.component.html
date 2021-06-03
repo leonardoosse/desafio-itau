@@ -1,0 +1,38 @@
+<div class="text-center">
+  <h2>Parametrização do Segmento</h2>  
+  <hr class="mb-4">
+
+  <div class="container">
+    
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Segmento</th>
+          <th scope="col">Taxa</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let segmento of segmentos">
+          <td>{{segmento.nome}}</td>
+          <td >
+            <div >
+            <input type="text" class="form-control form-control-sm mb-2" style="width:80px;" name="taxa" value="{{segmento.taxa}}" #taxa >
+          </div>
+          </td> 
+          <td>
+            <button class="btn btn-primary btn-sm" type="button" (click)="Atualizar(segmento, taxa.value)">Atualizar</button>
+          </td> 
+        </tr>
+      </tbody>
+    </table>
+
+    <hr>
+    <div class="alert alert-success" *ngIf="mensagem" >
+      {{mensagem}}
+    </div>
+
+  </div>
+</div>
+
+

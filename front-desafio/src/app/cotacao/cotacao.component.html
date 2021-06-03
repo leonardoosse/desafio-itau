@@ -1,0 +1,63 @@
+<div class="text-center">
+    <h2>Cotação</h2>  
+    <hr class="mb-4">
+
+  <!--  -->
+<div class="order-md-1">
+    <form class="needs-validation" >
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label for="segmento">Segmento</label>
+                <select class="custom-select d-block w-100" id="segmento" required="" (change)='onOptionsSelected(selectedSegmento.value)' #selectedSegmento                >
+                    <option value="">Escolha...</option>
+                    <option *ngFor="let item of taxaSegmento " value="{{item.taxa}}">
+                        {{item.nome}}
+                    </option>    
+                </select>
+                </div>
+                <div class="col-md-6 mb-3">
+                <label for="taxa-segmento">Taxa do Segmento</label>
+                <input type="text" class="form-control" value="{{selectedSegmento.value}}" id="taxa-segmento" placeholder="" readonly>
+            </div> 
+        </div >
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label for="moeda">Moeda</label>
+                <select class="custom-select d-block w-100" id="moeda" required="" (change)='onOptionsSelected(selectedMoeda.value)' #selectedMoeda>
+                <option value="">Escolha...</option>
+                <option *ngFor="let item of taxaConversao  | keyvalue" value="{{item.value}}">
+                    {{item.key}}
+                </option>                
+                </select>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="taxa-moeda">Taxa de Conversão da Moeda</label>
+                <input type="text" class="form-control" value="{{selectedMoeda.value}}" id="taxa-moeda" placeholder="" readonly>
+            </div> 
+        </div >
+
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+            <label for="valor-moeda">Valor Desejado da Moeda</label>
+            <input type="number" formControlName="valormoeda" class="form-control" name="valormoeda" required #valorMoeda>
+
+
+            </div>
+            <div class="col-md-6 mb-3">
+            <label for="valorCalculado">Valor (Reais)</label>
+            <input type="text" class="form-control" id="valorCalculado" value="{{valorCalculado}}" readonly>
+            </div>
+        </div>
+
+      <hr class="mb-4">
+      <button class="btn btn-primary btn-lg btn-block" type="button" (click)="calcular(selectedMoeda.value, selectedSegmento.value, valorMoeda.value)">Calcular</button>
+    </form>
+    <hr>
+    <div class="alert alert-danger" *ngIf="mensagem" >
+      {{mensagem}}
+    </div>
+  </div>
+
+  </div>

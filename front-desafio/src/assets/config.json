@@ -1,0 +1,5 @@
+{
+    "REST_API_MOEDA": "http://api.exchangeratesapi.io/v1/",
+    "REST_API_SEGMENTO": "http://localhost:8080/segmentos",
+    "REST_API_COTACAO": "http://localhost:8081/conversao/calcular"
+}
