@@ -35,8 +35,9 @@ docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=$DB_PASSWORD" \
 ```  
 
 5. Copiar os arquivos SQL para o contêiner
-
+```
 docker cp .  bd-desafio:/tmp
+```
 
 6. Criar banco de dados. 
 
