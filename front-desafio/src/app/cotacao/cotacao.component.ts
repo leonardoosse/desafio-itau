@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-//ver exemplo
-//https://stackblitz.com/edit/angular-qurccv?file=app%2Fapp.component.ts
-
 export class Segmento {
   id: number | undefined;
   nome: string | undefined;
@@ -20,7 +17,7 @@ export class CotacaoComponent implements OnInit {
   private endpoint = 'latest';
   private access_key = 'c571b17dc0985d932a0fbf5483863cf7';
   private REST_API_MOEDA = "http://api.exchangeratesapi.io/v1/" + this.endpoint + "?access_key=" + this.access_key;
-  private REST_API_SEGMENTO = "http://localhost:8080/segmentos";
+  private REST_API_SEGMENTO = "http://localhost:8080/segmentos/listar";
   private REST_API_COTACAO = "http://localhost:8081/conversao/calcular";
 
 
@@ -95,8 +92,3 @@ export class CotacaoComponent implements OnInit {
     }
   }
 }
-
-//Parametrizar valores do front
-//Tipo Campos
-//Tratamento de Erro
-

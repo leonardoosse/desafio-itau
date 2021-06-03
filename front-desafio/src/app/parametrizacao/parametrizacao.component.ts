@@ -15,7 +15,7 @@ export class ParametrizacaoComponent implements OnInit {
 
   constructor(private http: HttpClient) { }
 
-  private REST_API_SERVER = "http://localhost:8080/segmentos";
+  private REST_API_SERVER = "http://localhost:8080/segmentos/listar";
 
   ngOnInit(): void {
     this.carregarSegmento() 

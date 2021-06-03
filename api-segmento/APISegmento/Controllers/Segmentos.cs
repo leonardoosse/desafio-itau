@@ -12,8 +12,14 @@ namespace APISegmento.Controllers
     public class Segmentos : ControllerBase
     {
         [HttpGet]
-        [Route("listar")]
         [Route("")]
+        public string Get()
+        {
+            return "Ok";
+        }
+  
+        [HttpGet]
+        [Route("listar")]
         public List<Segmento> Index()
         {
             return Segmento.All();
