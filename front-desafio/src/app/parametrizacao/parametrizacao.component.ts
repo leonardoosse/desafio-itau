@@ -15,14 +15,14 @@ export class ParametrizacaoComponent implements OnInit {
 
   constructor(private http: HttpClient) { }
 
-  private REST_API_SERVER = "http://localhost:8080/segmentos/listar";
+  private REST_API_SERVER = "http://localhost:8080/segmentos";
 
   ngOnInit(): void {
     this.carregarSegmento() 
   }
 
   carregarSegmento() {
-    this.http.get<any>(this.REST_API_SERVER).subscribe(
+    this.http.get<any>(this.REST_API_SERVER+'/listar').subscribe(
       response => {
         this.segmentos = response;
       }

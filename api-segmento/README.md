@@ -36,6 +36,20 @@ git clone https://github.com/leonardoosse/desafio-itau.git
 cd ~/desafio-temp/desafio-itau/api-segmento
 ```
 
+3. Informar a senha do usuário da aplicação definida na criação do banco de Dados
+
+```
+USER_PASSWORD=FRzs@58OiTF
+```
+
+4. Atualizar a connectionString para o IP local e a senha do usuário da aplicação.
+
+```
+ipLocal=$(hostname -I | awk '{print $1}') && echo $ipLocal
+conexao=$(echo "Server=$ipLocal,1433;Database=desafio_itau;Uid=user_desafio;Pwd=$USER_PASSWORD" | base64)
+jq ".ConnectionStrings.ConexaoDesafioItau = \"$conexao\"" APISegmento/appsettings.json > tmp.$$.json && mv tmp.$$.json APISegmento/appsettings.json
+```
+
 1. Gerar a imagem 
 
 ```
